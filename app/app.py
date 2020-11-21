@@ -8,7 +8,7 @@ app = Flask(__name__) #creating the Flask class object
 
 @app.route('/upload')
 def upload_file():
-   return render_template('home.html')
+   return render_template("home.html")
    
 @app.route('/uploader', methods = ['POST']) #decorator drfines the   
 def home(): 
@@ -61,9 +61,9 @@ def home():
                     sumh = int(sums)
                     summi = int((sum/60)%60)
                     
-                return("<html> <head><style> table, th, td {   border: 1px solid black;}</style></head>   <body>      <table>	   <tr>    <th>"+"Total : "+str(sumh) + " h", str(summi) + " m""</th>  </tr>	  </table>   </body></html>")
+                return render_template("home.html",data="Total : "+str(sumh) + " h"+ str(summi) + " m")
             except:
-                    return("Excepion")
+                    return render_template("home.html",data="Excepion")
 
 		
 if __name__ == '__main__':
