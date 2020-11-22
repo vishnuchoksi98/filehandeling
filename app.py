@@ -6,7 +6,7 @@ import sys
 
 app = Flask(__name__) #creating the Flask class object   
 
-@app.route('/upload')
+@app.route('/')
 def upload_file():
    return render_template("home.html")
    
